@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  /* Chart Colors */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  
+  /* Sidebar Colors */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Typography - Tuscan Kitchen: Lora (headings) + Source Sans 3 (body) */
+  --font-heading: var(--font-lora);
+  --font-body: var(--font-source-sans);
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-lora);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-lora);
+  
+  /* Border Radius - Tuscan Kitchen uses subtler curves */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --radius-4xl: calc(var(--radius) + 20px);
+}
+
+/* ============================================
+   TUSCAN KITCHEN THEME - Light Mode
+   Earthy & Organic, Artisan Warmth
+   Inspired by: Tuscan Herb olive, Clay Soil, Cinnamon
+   ============================================ */
+:root {
+  /* Base Radius - Subtler curves for artisan feel */
+  --radius: 8px;
+  
+  /* Primary Colors - Deep Olive */
+  --primary: #5C6B3A;
+  --primary-light: #7A8E4E;
+  --primary-foreground: #FFFFFF;
+  
+  /* Secondary - Linen */
+  --secondary: #F8F4EF;
+  --secondary-foreground: #3D3528;
+  
+  /* Accent - Warm Sienna */
+  --accent: #AF6E4D;
+  --accent-foreground: #FFFFFF;
+  
+  /* Backgrounds */
+  --background: #FDFBF8;
+  --foreground: #2D2A24;
+  
+  /* Card */
+  --card: #FFFFFF;
+  --card-foreground: #2D2A24;
+  
+  /* Popover */
+  --popover: #FFFFFF;
+  --popover-foreground: #2D2A24;
+  
+  /* Muted */
+  --muted: #EDE8E0;
+  --muted-foreground: #6B6358;
+  
+  /* Border & Input */
+  --border: #E2DCD4;
+  --input: #E8E2D8;
+  --ring: #7A8E4E;
+  
+  /* Destructive */
+  --destructive: #C44D4D;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Chart Colors - Earthy palette */
+  --chart-1: #5C6B3A;
+  --chart-2: #7A8E4E;
+  --chart-3: #AF6E4D;
+  --chart-4: #D4A84B;
+  --chart-5: #8B4513;
+  
+  /* Sidebar */
+  --sidebar: #F8F4EF;
+  --sidebar-foreground: #2D2A24;
+  --sidebar-primary: #5C6B3A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EDE8E0;
+  --sidebar-accent-foreground: #3D3528;
+  --sidebar-border: #E2DCD4;
+  --sidebar-ring: #7A8E4E;
+}
+
+/* ============================================
+   TUSCAN KITCHEN THEME - Dark Mode (Optional)
+   Not actively used but available for future
+   ============================================ */
+.dark {
+  /* Primary Colors - Lighter Olive for Dark Mode */
+  --primary: #9AAF6A;
+  --primary-light: #B4C88A;
+  --primary-foreground: #1A1D14;
+  
+  /* Secondary */
+  --secondary: #28261F;
+  --secondary-foreground: #E8E4DC;
+  
+  /* Accent - Lighter Sienna */
+  --accent: #C88A6A;
+  --accent-foreground: #1A1410;
+  
+  /* Backgrounds */
+  --background: #161412;
+  --foreground: #F0ECE6;
+  
+  /* Card */
+  --card: #201E1A;
+  --card-foreground: #F0ECE6;
+  
+  /* Popover */
+  --popover: #201E1A;
+  --popover-foreground: #F0ECE6;
+  
+  /* Muted */
+  --muted: #2A2824;
+  --muted-foreground: #A09888;
+  
+  /* Border & Input */
+  --border: #3A3630;
+  --input: #302C26;
+  --ring: #9AAF6A;
+  
+  /* Destructive */
+  --destructive: #F87171;
+  --destructive-foreground: #450A0A;
+  
+  /* Chart Colors */
+  --chart-1: #9AAF6A;
+  --chart-2: #B4C88A;
+  --chart-3: #C88A6A;
+  --chart-4: #E4C06A;
+  --chart-5: #A86040;
+  
+  /* Sidebar */
+  --sidebar: #201E1A;
+  --sidebar-foreground: #F0ECE6;
+  --sidebar-primary: #9AAF6A;
+  --sidebar-primary-foreground: #1A1D14;
+  --sidebar-accent: #2A2824;
+  --sidebar-accent-foreground: #E8E4DC;
+  --sidebar-border: #3A3630;
+  --sidebar-ring: #9AAF6A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-source-sans), var(--font-body), sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-lora), var(--font-heading), serif;
+    font-weight: 600;
+  }
+  
+  a, button, input, select, textarea {
+    font-family: var(--font-source-sans), var(--font-body), sans-serif;
+  }
+}
+
+/* ============================================
+   CUSTOM UTILITIES
+   ============================================ */
+@utility text-heading {
+  font-family: var(--font-lora), var(--font-heading), serif;
+  font-weight: 600;
+}
+
+@utility text-display {
+  font-family: var(--font-lora), var(--font-display), serif;
+  font-weight: 600;
+}
+
+@utility text-logo {
+  font-family: var(--font-lora), serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@utility text-body {
+  font-family: var(--font-source-sans), var(--font-body), sans-serif;
+  font-weight: 400;
+}
+
+/* Tuscan Kitchen shadows - earthy olive tones */
+@utility shadow-soft-sm {
+  box-shadow: 0 2px 8px rgba(92, 107, 58, 0.08);
+}
+
+@utility shadow-soft-md {
+  box-shadow: 0 4px 16px rgba(92, 107, 58, 0.12);
+}
+
+@utility shadow-soft-lg {
+  box-shadow: 0 8px 32px rgba(92, 107, 58, 0.16);
+}
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ripple Animation for Product Cards */
+@layer components {
+  .card-ripple-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0s ease;
+  }
+  
+  .group:hover .card-ripple-overlay {
+    clip-path: circle(150% at 50% 50%);
+    transition: clip-path 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-ripple-overlay-delayed {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 0s ease;
+    transition-delay: 0s;
+  }
+  
+  .group:hover .card-ripple-overlay-delayed {
+    clip-path: circle(150% at 50% 50%);
+    transition: clip-path 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 75ms;
+  }
+}
