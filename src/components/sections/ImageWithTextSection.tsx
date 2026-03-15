@@ -50,7 +50,7 @@ export function ImageWithTextSection() {
 					initial="hidden"
 					whileInView="visible"
 					viewport={{ once: true, margin: "-100px" }}
-					className="relative aspect-square my-12 lg:aspect-auto lg:min-h-[600px] overflow-hidden"
+					className="relative aspect-square my-12 lg:aspect-auto overflow-hidden"
 				>
 					<Image
 						src="/images/lifestyle-cooking.png"

@@ -112,7 +112,7 @@ export function OurFormulasSection() {
 								animate={{ opacity: 1, y: 0 }}
 								exit={{ opacity: 0, y: -10 }}
 								transition={{ duration: 0.3 }}
-								className="min-h-[200px]"
+								className=""
 							>
 								<h3 className="text-display text-2xl md:text-3xl text-foreground mb-4">
 									{activeTabData?.title}

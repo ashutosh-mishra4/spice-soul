@@ -68,7 +68,7 @@ export function HeroSection() {
 	const slide = heroSlides[0];
 
 	return (
-		<section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden">
+		<section className="relative h-screen overflow-hidden">
 			{/* Background Image with Zoom Animation */}
 			<motion.div
 				variants={imageVariants}
@@ -85,11 +85,11 @@ export function HeroSection() {
 					}}
 				/>
 				{/* Overlay for text readability - very light */}
-				<div className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/10 to-transparent" />
+				<div className="absolute inset-0 from-black/25 via-black/10 to-transparent" />
 			</motion.div>
 
 			{/* Content */}
-			<div className="relative h-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="relative h-full mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					variants={containerVariants}
 					initial="hidden"
@@ -124,7 +124,7 @@ export function HeroSection() {
 							asChild
 							variant="outline"
 							size="lg"
-							className="border-2 border-white bg-transparent hover:bg-white/10 !text-white text-heading font-semibold uppercase tracking-wider px-8 py-6 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+							className="border-2 border-white bg-transparent hover:bg-white/10 text-white! text-heading font-semibold uppercase tracking-wider px-8 py-6 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
 						>
 							<Link href={slide.ctaLink}>{slide.ctaText}</Link>
 						</Button>

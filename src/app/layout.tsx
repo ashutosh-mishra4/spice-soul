@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, Lora, Figtree, Cal_Sans, Source_Sans_3 } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -54,6 +55,7 @@ export default function RootLayout({
         className={`${nunito.variable} ${lora.variable} ${figtree.variable} ${calSans.variable} ${sourceSans3.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <Toaster position="bottom-right" richColors />
       </body>
     </html>
   );

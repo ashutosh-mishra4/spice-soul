@@ -67,7 +67,7 @@ const headerVariants = {
 export function ProductGridSection() {
   return (
     <section className="py-16 md:py-24 bg-background">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           variants={headerVariants}
@@ -122,7 +122,7 @@ export function ProductGridSection() {
                     delay: index * 0.08,
                     ease: [0.25, 0.46, 0.45, 0.94],
                   }}
-                  className="w-[280px] flex-shrink-0"
+                  className=""
                 >
                   <ProductCard {...product} />
                 </motion.div>

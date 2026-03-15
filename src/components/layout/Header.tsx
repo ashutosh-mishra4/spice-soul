@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCartStore } from "@/lib/store/cart-store";
 import { motion } from "framer-motion";
 import { Menu, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,8 +43,8 @@ const navItems = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartCount] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const cartCount = useCartStore((s) => s.totalItems());
   const pathname = usePathname();
 
   // Detect scroll to add background
