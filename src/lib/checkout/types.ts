@@ -78,7 +78,17 @@ export const SHIPPING_OPTIONS: ShippingOption[] = [
   },
 ];
 
+export type PaymentMethod = "card" | "apple_pay" | "google_pay" | "paypal";
+
+export const PAYMENT_METHOD_LABELS: Record<PaymentMethod, string> = {
+  card: "Credit / Debit Card",
+  apple_pay: "Apple Pay",
+  google_pay: "Google Pay",
+  paypal: "PayPal",
+};
+
 export type PaymentInfo = {
+  method: PaymentMethod;
   cardComplete: boolean;
   billingMatchesShipping: boolean;
 };

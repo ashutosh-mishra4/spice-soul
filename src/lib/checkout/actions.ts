@@ -6,6 +6,7 @@ import type {
   PromoCode,
   OrderTotals,
   Order,
+  PaymentMethod,
 } from "./types";
 import type { CartItem } from "@/lib/store/cart-store";
 
@@ -97,6 +98,34 @@ export async function createPaymentIntent(
   // return { clientSecret: paymentIntent.client_secret };
   const mockSecret = `pi_mock_${Date.now()}_secret_${Math.random().toString(36).substring(2)}`;
   return { clientSecret: mockSecret };
+}
+
+// ─── Validate Card ──────────────────────────────────────────
+export async function validateCard(cardNumber: string): Promise<{
+  valid: boolean;
+  error?: string;
+}> {
+  await delay(600);
+
+  // Mock: reject cards starting with "0" or shorter than 16 digits
+  const digits = cardNumber.replace(/\s/g, "");
+  if (digits.length < 16 || digits.startsWith("0")) {
+    return { valid: false, error: "Card validation failed. Please try another payment method." };
+  }
+
+  return { valid: true };
+}
+
+// ─── Validate Alternative Payment ───────────────────────────
+export async function validateAltPayment(
+  method: PaymentMethod,
+  _amount: number
+): Promise<{ valid: boolean; error?: string }> {
+  await delay(700);
+
+  // Mock: always succeed for demo purposes
+  // In production this would verify with Apple Pay / Google Pay / PayPal APIs
+  return { valid: true };
 }
 
 // ─── Place Order ────────────────────────────────────────────

@@ -1935,6 +1935,10 @@
     margin-left: calc(var(--spacing) * 12);
   }
 
+  .ml-auto {
+    margin-left: auto;
+  }
+
   .line-clamp-2 {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -2119,10 +2123,6 @@
     height: 60vh;
   }
 
-  .h-\[200px\] {
-    height: 200px;
-  }
-
   .h-\[calc\(100\%-1px\)\] {
     height: calc(100% - 1px);
   }
@@ -2155,16 +2155,8 @@
     max-height: var(--radix-select-content-available-height);
   }
 
-  .max-h-\[900px\] {
-    max-height: 900px;
-  }
-
   .min-h-\[60vh\] {
     min-height: 60vh;
-  }
-
-  .min-h-\[200px\] {
-    min-height: 200px;
   }
 
   .min-h-\[400px\] {
@@ -2261,10 +2253,6 @@
 
   .w-80 {
     width: calc(var(--spacing) * 80);
-  }
-
-  .w-\[280px\] {
-    width: 280px;
   }
 
   .w-\[340px\] {
@@ -2712,6 +2700,16 @@
     border-color: var(--destructive);
   }
 
+  .border-destructive\/20 {
+    border-color: var(--destructive);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .border-destructive\/20 {
+      border-color: color-mix(in oklab, var(--destructive) 20%, transparent);
+    }
+  }
+
   .border-foreground {
     border-color: var(--foreground);
   }
@@ -2812,6 +2810,16 @@
 
   .bg-destructive {
     background-color: var(--destructive);
+  }
+
+  .bg-destructive\/10 {
+    background-color: var(--destructive);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-destructive\/10 {
+      background-color: color-mix(in oklab, var(--destructive) 10%, transparent);
+    }
   }
 
   .bg-foreground {
@@ -3428,16 +3436,16 @@
     white-space: nowrap;
   }
 
-  .\!text-white {
-    color: var(--color-white) !important;
-  }
-
   .text-\[\#0d0d0d\] {
     color: #0d0d0d;
   }
 
   .text-accent {
     color: var(--accent);
+  }
+
+  .text-accent-foreground {
+    color: var(--accent-foreground);
   }
 
   .text-card-foreground {
@@ -3565,6 +3573,15 @@
   .line-through {
     -webkit-text-decoration-line: line-through;
     text-decoration-line: line-through;
+  }
+
+  .underline {
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+  }
+
+  .underline-offset-2 {
+    text-underline-offset: 2px;
   }
 
   .underline-offset-4 {
@@ -4088,6 +4105,18 @@
   }
 
   @media (hover: hover) {
+    .hover\:border-primary\/50:hover {
+      border-color: var(--primary);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:border-primary\/50:hover {
+        border-color: color-mix(in oklab, var(--primary) 50%, transparent);
+      }
+    }
+  }
+
+  @media (hover: hover) {
     .hover\:bg-accent:hover {
       background-color: var(--accent);
     }
@@ -4150,6 +4179,18 @@
   @media (hover: hover) {
     .hover\:bg-primary-light:hover {
       background-color: var(--primary-light);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-primary\/5:hover {
+      background-color: var(--primary);
+    }
+
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-primary\/5:hover {
+        background-color: color-mix(in oklab, var(--primary) 5%, transparent);
+      }
     }
   }
 
@@ -4432,6 +4473,10 @@
 
   .disabled\:opacity-50:disabled {
     opacity: .5;
+  }
+
+  .disabled\:opacity-60:disabled {
+    opacity: .6;
   }
 
   .has-data-\[slot\=card-action\]\:grid-cols-\[1fr_auto\]:has([data-slot="card-action"]) {
@@ -5169,12 +5214,6 @@
   @media (min-width: 64rem) {
     .lg\:h-20 {
       height: calc(var(--spacing) * 20);
-    }
-  }
-
-  @media (min-width: 64rem) {
-    .lg\:min-h-\[600px\] {
-      min-height: 600px;
     }
   }
 

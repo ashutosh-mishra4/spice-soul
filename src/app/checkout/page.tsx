@@ -13,7 +13,7 @@ import { PaymentStep } from "@/components/checkout/PaymentStep";
 import { ReviewStep } from "@/components/checkout/ReviewStep";
 import { OrderSummary } from "@/components/checkout/OrderSummary";
 import { useCartStore } from "@/lib/store/cart-store";
-import { CHECKOUT_STEPS, STEP_LABELS, type CheckoutStep as StepType } from "@/lib/checkout/types";
+import { CHECKOUT_STEPS, STEP_LABELS, PAYMENT_METHOD_LABELS, type CheckoutStep as StepType } from "@/lib/checkout/types";
 
 const stepComponents: Record<StepType, React.ComponentType> = {
   contact: ContactStep,
@@ -54,7 +54,10 @@ export default function CheckoutPage() {
               checkout.deliveryMethod.slice(1)
           : null;
       case "payment":
-        return checkout.payment?.cardComplete ? "Card ending in ****" : null;
+        if (!checkout.payment) return null;
+        return checkout.payment.method === "card"
+          ? "Card ending in ****"
+          : PAYMENT_METHOD_LABELS[checkout.payment.method];
       default:
         return null;
     }
