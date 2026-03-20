@@ -1,8 +1,4 @@
 {
-  "/about/page": "app/about/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/gift-sets/page": "app/gift-sets/page.js",
-  "/page": "app/page.js",
-  "/products/[slug]/page": "app/products/[slug]/page.js",
-  "/subscribe/page": "app/subscribe/page.js"
+  "/page": "app/page.js"
 }
