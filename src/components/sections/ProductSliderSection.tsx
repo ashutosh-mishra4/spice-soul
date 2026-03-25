@@ -144,7 +144,7 @@ export function ProductSliderSection() {
 					variants={itemVariants}
 					className="text-display text-3xl md:text-4xl lg:text-5xl text-foreground text-center mb-12"
 				>
-					Shop The Collection
+					Discover the Blends
 				</motion.h2>
 
 				{/* Slider Container */}
@@ -261,7 +261,7 @@ function ProductSliderCard({ product }: { product: SliderProduct }) {
 					className="absolute inset-0 pointer-events-none z-[2]"
 					style={{
 						background:
-							"linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%)",
+							"linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%)",
 					}}
 					initial={{ x: "-100%" }}
 					animate={{ x: isHovered ? "100%" : "-100%" }}

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ProductCard } from "@/components/ui/ProductCard";
 
@@ -65,6 +66,8 @@ const headerVariants = {
 };
 
 export function ProductGridSection() {
+  const [hovered, setHovered] = useState<number | null>(null);
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,7 +106,12 @@ export function ProductGridSection() {
                   ease: [0.25, 0.46, 0.45, 0.94],
                 }}
               >
-                <ProductCard {...product} />
+                <ProductCard
+                  {...product}
+                  index={index}
+                  hovered={hovered}
+                  setHovered={setHovered}
+                />
               </motion.div>
             ))}
           </div>
@@ -122,9 +130,13 @@ export function ProductGridSection() {
                     delay: index * 0.08,
                     ease: [0.25, 0.46, 0.45, 0.94],
                   }}
-                  className=""
                 >
-                  <ProductCard {...product} />
+                  <ProductCard
+                    {...product}
+                    index={index + products.length}
+                    hovered={hovered}
+                    setHovered={setHovered}
+                  />
                 </motion.div>
               ))}
             </div>

@@ -84,8 +84,8 @@ export function HeroSection() {
 							slide.backgroundPosition || "center",
 					}}
 				/>
-				{/* Overlay for text readability - very light */}
-				<div className="absolute inset-0 from-black/25 via-black/10 to-transparent" />
+			{/* Overlay for text readability */}
+				<div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/35 to-transparent" />
 			</motion.div>
 
 			{/* Content */}

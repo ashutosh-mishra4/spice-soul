@@ -43,25 +43,7 @@ const imageVariants = {
 export function ImageWithTextSection() {
 	return (
 		<section className="relative bg-secondary border-b border-t border-foreground">
-			<div className="grid grid-cols-1 lg:grid-cols-2">
-				{/* Image Side */}
-				<motion.div
-					variants={imageVariants}
-					initial="hidden"
-					whileInView="visible"
-					viewport={{ once: true, margin: "-100px" }}
-					className="relative aspect-square my-12 lg:aspect-auto overflow-hidden"
-				>
-					<Image
-						src="/images/lifestyle-cooking.png"
-						alt="Happy couple enjoying a healthy lifestyle together"
-						fill
-						className="object-cover ml-12"
-						sizes="(max-width: 1024px) 100vw, 50vw"
-						priority
-					/>
-				</motion.div>
-
+		<div className="grid grid-cols-1 lg:grid-cols-2 px-6 sm:px-10">
 				{/* Text Side */}
 				<motion.div
 					variants={containerVariants}
@@ -107,6 +89,24 @@ export function ImageWithTextSection() {
 							</Link>
 						</Button>
 					</motion.div>
+				</motion.div>
+
+				{/* Image Side */}
+				<motion.div
+					variants={imageVariants}
+					initial="hidden"
+					whileInView="visible"
+					viewport={{ once: true, margin: "-100px" }}
+					className="relative aspect-square my-12 lg:aspect-auto overflow-hidden"
+				>
+					<Image
+						src="/images/lifestyle-cooking.png"
+						alt="Happy couple enjoying a healthy lifestyle together"
+						fill
+						className="object-cover ml-12"
+						sizes="(max-width: 1024px) 100vw, 50vw"
+						priority
+					/>
 				</motion.div>
 			</div>
 		</section>

@@ -38,7 +38,6 @@ const navItems = [
   },
   { label: "About", href: "/about" },
   { label: "Gift Sets", href: "/gift-sets" },
-  { label: "Subscribe & Save", href: "/subscribe" },
 ];
 
 export function Header() {

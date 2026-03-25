@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
@@ -10,6 +9,9 @@ interface ProductCardProps {
   image: string;
   accentColor: string;
   href: string;
+  index: number;
+  hovered: number | null;
+  setHovered: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
 export function ProductCard({
@@ -18,8 +20,13 @@ export function ProductCard({
   image,
   accentColor,
   href,
+  index,
+  hovered,
+  setHovered,
 }: ProductCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const isHovered = hovered === index;
+  const isAnyHovered = hovered !== null;
+  const isBlurred = isAnyHovered && !isHovered;
 
   return (
     <Link href={href} className="block">
@@ -29,11 +36,19 @@ export function ProductCard({
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         className="flex flex-col"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        onMouseEnter={() => setHovered(index)}
+        onMouseLeave={() => setHovered(null)}
       >
         {/* Card Container */}
-        <div className="relative overflow-hidden shadow-soft-md">
+        <motion.div
+          className="relative overflow-hidden shadow-soft-md"
+          animate={{
+            filter: isBlurred ? "blur(4px)" : "blur(0px)",
+            opacity: isBlurred ? 0.6 : 1,
+            scale: isHovered ? 1.02 : isBlurred ? 0.97 : 1,
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
           <motion.div
             animate={{ scale: isHovered ? 1.02 : 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -147,7 +162,7 @@ export function ProductCard({
               transition={{ duration: 1, ease: "easeInOut" }}
             />
           </motion.div>
-        </div>
+        </motion.div>
 
         {/* Accent Bar Below Card */}
         <div
