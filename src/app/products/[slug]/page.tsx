@@ -19,6 +19,7 @@ import { toast } from "sonner";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { getContrastTextColor } from "@/lib/utils";
 import { useCartStore } from "@/lib/store/cart-store";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -54,9 +55,9 @@ export default function ProductDetailPage() {
   if (!product) {
     return (
       <main className="min-h-screen">
-        <Header />
+        <Header variant="solid" />
         <div className="pt-40 pb-20 text-center max-w-[1440px] mx-auto px-4">
-          <h1 className="text-display text-4xl text-foreground mb-4">
+          <h1 className="font-display text-4xl text-foreground mb-4">
             Product Not Found
           </h1>
           <p className="text-muted-foreground mb-8">
@@ -85,7 +86,7 @@ export default function ProductDetailPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
+      <Header variant="solid" />
 
       {/* Breadcrumb */}
       <div className="pt-32 pb-4 bg-secondary">
@@ -154,10 +155,10 @@ export default function ProductDetailPage() {
               }}
             >
               <motion.div variants={itemVariants}>
-                <p className="text-sm text-muted-foreground uppercase tracking-[0.15em] text-heading mb-2">
+                <p className="text-sm text-muted-foreground uppercase tracking-[0.15em] font-heading mb-2">
                   {product.category}
                 </p>
-                <h1 className="text-display text-3xl md:text-4xl lg:text-5xl text-foreground">
+                <h1 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground">
                   {product.name}
                 </h1>
               </motion.div>
@@ -189,7 +190,7 @@ export default function ProductDetailPage() {
 
               {/* Price */}
               <motion.div variants={itemVariants} className="mt-6">
-                <span className="text-display text-3xl text-foreground">
+                <span className="font-display text-3xl text-foreground">
                   ${product.price}
                 </span>
               </motion.div>
@@ -207,7 +208,7 @@ export default function ProductDetailPage() {
               {/* Quantity & Add to Cart */}
               <motion.div variants={itemVariants} className="space-y-6">
                 <div>
-                  <label className="text-sm text-heading font-semibold text-foreground mb-3 block">
+                  <label className="text-sm font-heading font-semibold text-foreground mb-3 block">
                     Qty
                   </label>
                   <div className="flex items-center gap-3">
@@ -221,7 +222,7 @@ export default function ProductDetailPage() {
                       >
                         <Minus className="w-4 h-4" />
                       </button>
-                      <span className="w-12 text-center text-heading font-semibold">
+                      <span className="w-12 text-center font-heading font-semibold">
                         {quantity}
                       </span>
                       <button
@@ -238,9 +239,10 @@ export default function ProductDetailPage() {
                 <Button
                   size="lg"
                   onClick={handleAddToCart}
-                  className="w-full py-6 text-base font-semibold text-heading rounded-sm"
+                  className="w-full py-6 text-base font-semibold font-heading rounded-sm"
                   style={{
                     backgroundColor: added ? "#5C6B3A" : product.accentColor,
+                    color: added ? "#FFFFFF" : getContrastTextColor(product.accentColor),
                   }}
                 >
                   <ShoppingCart className="w-5 h-5 mr-2" />
@@ -280,7 +282,7 @@ export default function ProductDetailPage() {
                       <TabsTrigger
                         key={tab}
                         value={tab}
-                        className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none text-heading capitalize px-6 py-3"
+                        className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none font-heading capitalize px-6 py-3"
                       >
                         {tab}
                       </TabsTrigger>
@@ -344,7 +346,7 @@ export default function ProductDetailPage() {
       {/* Related Products */}
       <section className="py-16 md:py-20 bg-background border-t border-border">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-display text-3xl md:text-4xl text-foreground text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl text-foreground text-center mb-12">
             You May Also Like
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
@@ -373,7 +375,7 @@ function RelatedProductCard({ product }: { product: Product }) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-5">
-          <h3 className="text-display text-xl text-white">{product.name}</h3>
+          <h3 className="font-display text-xl text-white">{product.name}</h3>
           <p className="text-white/80 text-sm mt-1">${product.price}</p>
         </div>
       </div>

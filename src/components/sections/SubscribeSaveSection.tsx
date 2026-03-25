@@ -65,7 +65,7 @@ export function SubscribeSaveSection() {
 					{/* Heading */}
 						<motion.h2
 							variants={itemVariants}
-							className="text-display text-center text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
+							className="font-display text-center text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight"
 						>
 							Artisan Spice Blends That Transform
 							Every Dish You Create

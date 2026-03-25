@@ -108,7 +108,7 @@ export function ReviewStep() {
         <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
           <ClipboardCheck className="w-4 h-4 text-primary" />
         </div>
-        <h3 className="text-heading text-lg text-foreground">Review Order</h3>
+        <h3 className="font-heading text-lg text-foreground">Review Order</h3>
       </div>
 
       {/* Summary */}
@@ -193,8 +193,8 @@ export function ReviewStep() {
         </div>
         <Separator />
         <div className="flex justify-between">
-          <span className="text-heading text-lg text-foreground">Total</span>
-          <span className="text-display text-xl text-foreground">
+          <span className="font-heading text-lg text-foreground">Total</span>
+          <span className="font-display text-xl text-foreground">
             ${total.toFixed(2)}
           </span>
         </div>
@@ -221,7 +221,7 @@ export function ReviewStep() {
         type="button"
         onClick={handlePlaceOrder}
         disabled={isPlacing || !agreedToTerms}
-        className="w-full bg-primary hover:bg-primary-light text-white text-heading font-semibold py-6 rounded-sm text-base"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold py-6 rounded-sm text-base"
       >
         {isPlacing ? (
           <>

@@ -48,7 +48,7 @@ export default function ShopPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="text-display text-4xl md:text-5xl lg:text-6xl text-white mb-3">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-3">
               Shop All Blends
             </h1>
             <p className="text-white/80 text-lg md:text-xl max-w-lg">
@@ -66,7 +66,7 @@ export default function ShopPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-muted-foreground mb-10 text-heading text-sm uppercase tracking-[0.15em]"
+            className="text-muted-foreground mb-10 font-heading text-sm uppercase tracking-[0.15em]"
           >
             {products.length} Products
           </motion.p>
@@ -131,14 +131,14 @@ function ShopProductCard({
 
         {/* Info */}
         <div className="p-5">
-          <h3 className="text-heading text-lg text-foreground group-hover:text-primary transition-colors">
+          <h3 className="font-heading text-lg text-foreground group-hover:text-primary transition-colors">
             {product.name}
           </h3>
           <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
             {product.description}
           </p>
           <div className="mt-3 flex items-center justify-between">
-            <span className="text-heading text-lg text-foreground">
+            <span className="font-heading text-lg text-foreground">
               ${product.price}
             </span>
             <div className="flex items-center gap-1">

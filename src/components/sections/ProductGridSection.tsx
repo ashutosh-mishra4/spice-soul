@@ -79,7 +79,7 @@ export function ProductGridSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-heading text-sm md:text-base uppercase tracking-[0.2em] text-muted-foreground">
+          <h2 className="font-heading text-sm md:text-base uppercase tracking-[0.2em] text-muted-foreground">
             Discover Our Artisan Spice Blends
           </h2>
         </motion.div>

@@ -53,9 +53,9 @@ function StepIndicator({
       <div
         className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold transition-colors ${
           isCompleted
-            ? "bg-primary text-white"
+            ? "bg-primary text-primary-foreground"
             : isActive
-              ? "bg-primary text-white"
+              ? "bg-primary text-primary-foreground"
               : "bg-muted text-muted-foreground"
         }`}
       >
@@ -64,7 +64,7 @@ function StepIndicator({
       <span
         className={`text-sm hidden sm:inline ${
           isActive
-            ? "text-foreground font-semibold text-heading"
+            ? "text-foreground font-semibold font-heading"
             : isCompleted
               ? "text-primary font-medium"
               : "text-muted-foreground"

@@ -110,7 +110,7 @@ export function PaymentStep() {
         <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
           <CreditCard className="w-4 h-4 text-primary" />
         </div>
-        <h3 className="text-heading text-lg text-foreground">Payment</h3>
+        <h3 className="font-heading text-lg text-foreground">Payment</h3>
       </div>
 
       {/* Error Banner */}
@@ -257,7 +257,7 @@ export function PaymentStep() {
               type="button"
               onClick={handleCardSubmit}
               disabled={!cardFilled || isValidating}
-              className="w-full bg-primary hover:bg-primary-light text-white text-heading font-semibold py-5 rounded-sm disabled:opacity-50"
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold py-5 rounded-sm disabled:opacity-50"
             >
               {isValidating ? "Validating…" : "Review Order"}
             </Button>
@@ -279,7 +279,7 @@ export function PaymentStep() {
                 <Wallet className="w-4 h-4 text-accent-foreground" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-foreground text-heading">
+                <p className="text-sm font-semibold text-foreground font-heading">
                   Choose another payment method
                 </p>
                 <p className="text-xs text-muted-foreground">
@@ -304,7 +304,7 @@ export function PaymentStep() {
                   <span className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-sm font-bold text-foreground shrink-0">
                     {method.icon}
                   </span>
-                  <span className="text-sm font-medium text-foreground text-heading">
+                  <span className="text-sm font-medium text-foreground font-heading">
                     {method.label}
                   </span>
                   {selectedAlt === method.id && isValidating && (

@@ -99,7 +99,7 @@ export function HeroSection() {
 					{/* Title */}
 					<motion.h1
 						variants={itemVariants}
-						className="text-display text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] text-white leading-tight"
+						className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] text-white leading-tight"
 					>
 						{slide.title}{" "}
 						<span className="text-white">
@@ -124,7 +124,7 @@ export function HeroSection() {
 							asChild
 							variant="outline"
 							size="lg"
-							className="border-2 border-white bg-transparent hover:bg-white/10 text-white! text-heading font-semibold uppercase tracking-wider px-8 py-6 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+							className="border-2 border-white bg-transparent hover:bg-white/10 text-white! font-heading font-semibold uppercase tracking-wider px-8 py-6 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
 						>
 							<Link href={slide.ctaLink}>{slide.ctaText}</Link>
 						</Button>

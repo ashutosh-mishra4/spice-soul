@@ -86,12 +86,12 @@ export function OrderSummary() {
         onClick={() => setMobileExpanded(!mobileExpanded)}
         className="lg:hidden w-full flex items-center justify-between p-4 text-sm"
       >
-        <span className="text-heading font-semibold text-foreground">
+        <span className="font-heading font-semibold text-foreground">
           Order Summary ({totalItems} items)
         </span>
         <div className="flex items-center gap-2">
           {total !== null && (
-            <span className="text-heading font-semibold text-foreground">
+            <span className="font-heading font-semibold text-foreground">
               ${total.toFixed(2)}
             </span>
           )}
@@ -105,7 +105,7 @@ export function OrderSummary() {
 
       {/* Content — always visible on desktop, toggleable on mobile */}
       <div className={`p-6 pt-0 lg:pt-6 ${mobileExpanded ? "block" : "hidden lg:block"}`}>
-        <h3 className="text-heading text-lg text-foreground mb-4 hidden lg:block">
+        <h3 className="font-heading text-lg text-foreground mb-4 hidden lg:block">
           Order Summary
         </h3>
 
@@ -218,8 +218,8 @@ export function OrderSummary() {
         <Separator className="my-4" />
 
         <div className="flex justify-between items-baseline">
-          <span className="text-heading text-base text-foreground">Total</span>
-          <span className="text-display text-xl text-foreground">
+          <span className="font-heading text-base text-foreground">Total</span>
+          <span className="font-display text-xl text-foreground">
             {total !== null ? `$${total.toFixed(2)}` : "—"}
           </span>
         </div>

@@ -40,7 +40,12 @@ const navItems = [
   { label: "Gift Sets", href: "/gift-sets" },
 ];
 
-export function Header() {
+interface HeaderProps {
+  /** "overlay" = transparent bg + white text (for hero pages), "solid" = solid bg + dark text */
+  variant?: "overlay" | "solid";
+}
+
+export function Header({ variant = "overlay" }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const cartCount = useCartStore((s) => s.totalItems());
@@ -76,7 +81,7 @@ export function Header() {
     >
       {/* Announcement Bar */}
       <div className="bg-primary text-primary-foreground text-center py-2 text-sm font-medium">
-        <span className="text-heading">
+        <span className="font-heading">
           FREE SAMPLE WITH EVERY ORDER | FREE SHIPPING OVER $35
         </span>
       </div>
@@ -84,9 +89,13 @@ export function Header() {
       {/* Main Header */}
       <div 
         className={`transition-all duration-300 ${
-          isScrolled 
-            ? "bg-primary/50 backdrop-blur-sm shadow-lg" 
-            : "bg-transparent"
+          variant === "solid"
+            ? isScrolled
+              ? "bg-card shadow-lg"
+              : "bg-card"
+            : isScrolled 
+              ? "bg-primary/50 backdrop-blur-sm shadow-lg" 
+              : "bg-transparent"
         }`}
       >
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,14 +104,14 @@ export function Header() {
             <div className="lg:hidden">
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="text-white">
+                  <Button variant="ghost" size="icon" className={variant === "solid" ? "text-foreground" : "text-white"}>
                     <Menu className="h-6 w-6" />
                     <span className="sr-only">Open menu</span>
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="w-80">
                   <SheetHeader>
-                    <SheetTitle className="text-logo text-3xl text-primary">
+                    <SheetTitle className="font-logo text-3xl text-primary">
                       Spice & Soul
                     </SheetTitle>
                   </SheetHeader>
@@ -147,10 +156,10 @@ export function Header() {
                         <>
                           <NavigationMenuTrigger 
                             variant="transparent"
-                            className={`text-heading font-semibold hover:text-accent data-[state=open]:text-accent relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full data-[state=open]:after:w-full ${
+                            className={`font-heading font-semibold hover:text-accent data-[state=open]:text-accent relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full data-[state=open]:after:w-full ${
                               isActive(item.href, item.children)
                                 ? "text-accent after:w-full"
-                                : "text-white after:w-0"
+                                : variant === "solid" ? "text-foreground after:w-0" : "text-white after:w-0"
                             }`}
                           >
                             {item.label}
@@ -176,10 +185,10 @@ export function Header() {
                         <NavigationMenuLink asChild variant="transparent">
                           <Link
                             href={item.href}
-                            className={`px-4 py-2 text-heading font-semibold hover:text-accent transition-colors relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${
+                            className={`px-4 py-2 font-heading font-semibold hover:text-accent transition-colors relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${
                               isActive(item.href)
                                 ? "text-accent after:w-full"
-                                : "text-white after:w-0"
+                                : variant === "solid" ? "text-foreground after:w-0" : "text-white after:w-0"
                             }`}
                           >
                             {item.label}
@@ -195,7 +204,7 @@ export function Header() {
             {/* Logo - Center */}
             <Link
               href="/"
-              className="absolute left-1/2 -translate-x-1/2 text-logo text-3xl lg:text-4xl text-white"
+              className={`absolute left-1/2 -translate-x-1/2 font-logo text-3xl lg:text-4xl ${variant === "solid" ? "text-primary" : "text-white"}`}
             >
               Spice & Soul
             </Link>
@@ -204,14 +213,14 @@ export function Header() {
             <div className="flex items-center gap-2">
               <Link
                 href="/subscribe"
-                className="hidden md:block text-sm text-heading font-semibold text-white hover:text-white/80 transition-colors"
+                className={`hidden md:block text-sm font-heading font-semibold transition-colors ${variant === "solid" ? "text-foreground hover:text-accent" : "text-white hover:text-white/80"}`}
               >
                 Subscribe & Save
               </Link>
               <Button
                 variant="ghost"
                 size="icon"
-                className="relative text-white hover:bg-white/10"
+                className={`relative ${variant === "solid" ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"}`}
                 asChild
               >
                 <Link href="/cart">

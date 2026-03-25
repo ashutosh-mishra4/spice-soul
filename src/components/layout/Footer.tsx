@@ -35,14 +35,14 @@ export function Footer() {
 	};
 
 	return (
-		<footer className="bg-primary text-white">
+		<footer className="bg-primary text-primary-foreground">
 			{/* Top Section */}
 			<div className="px-6 md:px-12 lg:px-[50px] py-14 md:py-16">
 				<div className="max-w-7xl mx-auto">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
 						{/* Left - Newsletter */}
 						<div>
-							<h3 className="text-display text-2xl md:text-3xl mb-4">
+							<h3 className="font-display text-2xl md:text-3xl mb-4">
 								Join the Flavor Club
 							</h3>
 							<p className="text-white/70 text-base mb-6 max-w-md">

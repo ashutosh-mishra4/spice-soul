@@ -2347,20 +2347,24 @@
     text-align: right;
   }
 
-  .text-logo {
+  .font-logo {
     font-family: var(--font-lora), serif;
     letter-spacing: .02em;
     font-weight: 700;
   }
 
-  .text-display {
+  .font-display {
     font-family: var(--font-lora), var(--font-display), serif;
     font-weight: 600;
   }
 
-  .text-heading {
+  .font-heading {
     font-family: var(--font-lora), var(--font-heading), serif;
     font-weight: 600;
+  }
+
+  .font-display, .font-heading {
+    font-family: var(--font-lora);
   }
 
   .font-mono {
@@ -3216,12 +3220,6 @@
   @media (hover: hover) {
     .hover\:bg-muted:hover {
       background-color: var(--muted);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-primary-light:hover {
-      background-color: var(--primary-light);
     }
   }
 

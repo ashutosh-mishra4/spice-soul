@@ -71,7 +71,7 @@ export function ShippingStep() {
         <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
           <MapPin className="w-4 h-4 text-primary" />
         </div>
-        <h3 className="text-heading text-lg text-foreground">
+        <h3 className="font-heading text-lg text-foreground">
           Shipping Address
         </h3>
       </div>
@@ -242,7 +242,7 @@ export function ShippingStep() {
 
       <Button
         type="submit"
-        className="w-full bg-primary hover:bg-primary-light text-white text-heading font-semibold py-5 rounded-sm"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold py-5 rounded-sm"
       >
         Continue to Delivery Method
       </Button>

@@ -55,7 +55,7 @@ export default function CartPage() {
 
   return (
     <main className="min-h-screen">
-      <Header />
+      <Header variant="solid" />
 
       <div className="pt-32 pb-4 bg-secondary">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,7 +75,7 @@ export default function CartPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-display text-3xl md:text-4xl text-foreground mb-10"
+            className="font-display text-3xl md:text-4xl text-foreground mb-10"
           >
             Your Cart
           </motion.h1>
@@ -112,7 +112,7 @@ export default function CartPage() {
                 </motion.div>
 
                 {/* Header Row */}
-                <div className="hidden md:grid md:grid-cols-[2fr_1fr_1fr_auto] gap-6 pb-4 border-b border-border text-xs text-heading uppercase tracking-wider text-muted-foreground">
+                <div className="hidden md:grid md:grid-cols-[2fr_1fr_1fr_auto] gap-6 pb-4 border-b border-border text-xs font-heading uppercase tracking-wider text-muted-foreground">
                   <span>Product</span>
                   <span className="text-center">Quantity</span>
                   <span className="text-right">Total</span>
@@ -146,7 +146,7 @@ export default function CartPage() {
                         <div>
                           <Link
                             href={`/products/${item.product.slug}`}
-                            className="text-heading text-base text-foreground hover:text-primary transition-colors"
+                            className="font-heading text-base text-foreground hover:text-primary transition-colors"
                           >
                             {item.product.name}
                           </Link>
@@ -189,7 +189,7 @@ export default function CartPage() {
                       </div>
 
                       <div className="text-right">
-                        <span className="text-heading text-base text-foreground">
+                        <span className="font-heading text-base text-foreground">
                           ${(item.product.price * item.quantity).toFixed(2)}
                         </span>
                       </div>
@@ -211,7 +211,7 @@ export default function CartPage() {
               {/* Order Summary */}
               <div className="lg:col-span-1">
                 <div className="sticky top-32 bg-card border border-border rounded-sm p-8">
-                  <h2 className="text-heading text-xl text-foreground mb-6">
+                  <h2 className="font-heading text-xl text-foreground mb-6">
                     Order Summary
                   </h2>
 
@@ -237,17 +237,17 @@ export default function CartPage() {
                   <Separator className="my-6" />
 
                   <div className="flex justify-between items-baseline mb-8">
-                    <span className="text-heading text-lg text-foreground">
+                    <span className="font-heading text-lg text-foreground">
                       Subtotal
                     </span>
-                    <span className="text-display text-2xl text-foreground">
+                    <span className="font-display text-2xl text-foreground">
                       ${subtotal.toFixed(2)}
                     </span>
                   </div>
 
                   <Button
                     asChild
-                    className="w-full bg-primary hover:bg-primary-light text-white text-heading font-semibold py-6 rounded-sm"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold py-6 rounded-sm"
                   >
                     <Link href="/checkout">
                       Proceed to Checkout
@@ -291,7 +291,7 @@ function EmptyCart() {
       <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-6">
         <ShoppingBag className="w-10 h-10 text-muted-foreground" />
       </div>
-      <h2 className="text-display text-2xl text-foreground mb-3">
+      <h2 className="font-display text-2xl text-foreground mb-3">
         Your cart is empty
       </h2>
       <p className="text-muted-foreground mb-8 max-w-sm mx-auto">
@@ -301,7 +301,7 @@ function EmptyCart() {
       <Button
         asChild
         size="lg"
-        className="bg-primary hover:bg-primary-light text-white text-heading font-semibold px-10 py-6 rounded-sm"
+        className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold px-10 py-6 rounded-sm"
       >
         <Link href="/shop">
           Continue Shopping

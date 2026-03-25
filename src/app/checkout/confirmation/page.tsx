@@ -63,7 +63,7 @@ function ConfirmationContent() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-center"
         >
-          <h1 className="text-display text-3xl md:text-4xl text-foreground mb-3">
+          <h1 className="font-display text-3xl md:text-4xl text-foreground mb-3">
             Thank you for your order!
           </h1>
           <p className="text-muted-foreground text-lg">
@@ -80,7 +80,7 @@ function ConfirmationContent() {
         >
           <div className="flex items-center gap-3 mb-6">
             <Package className="w-5 h-5 text-primary" />
-            <h2 className="text-heading text-lg text-foreground">
+            <h2 className="font-heading text-lg text-foreground">
               Order Details
             </h2>
           </div>
@@ -127,7 +127,7 @@ function ConfirmationContent() {
           <button className="flex items-center gap-3 p-4 bg-card border border-border rounded-sm hover:border-primary/30 hover:shadow-soft-sm transition-all text-left">
             <UserPlus className="w-5 h-5 text-primary shrink-0" />
             <div>
-              <p className="text-sm text-heading font-semibold text-foreground">
+              <p className="text-sm font-heading font-semibold text-foreground">
                 Create an Account
               </p>
               <p className="text-xs text-muted-foreground">
@@ -138,7 +138,7 @@ function ConfirmationContent() {
           <button className="flex items-center gap-3 p-4 bg-card border border-border rounded-sm hover:border-primary/30 hover:shadow-soft-sm transition-all text-left">
             <Share2 className="w-5 h-5 text-accent shrink-0" />
             <div>
-              <p className="text-sm text-heading font-semibold text-foreground">
+              <p className="text-sm font-heading font-semibold text-foreground">
                 Share with Friends
               </p>
               <p className="text-xs text-muted-foreground">
@@ -158,7 +158,7 @@ function ConfirmationContent() {
           <Button
             asChild
             size="lg"
-            className="bg-primary hover:bg-primary-light text-white text-heading font-semibold px-10 py-6 rounded-sm"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold px-10 py-6 rounded-sm"
           >
             <Link href="/shop">
               Continue Shopping

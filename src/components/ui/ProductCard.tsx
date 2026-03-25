@@ -102,7 +102,7 @@ export function ProductCard({
             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 z-10">
               {/* Product Name - moves up on hover */}
               <motion.h3
-                className="text-display text-2xl md:text-3xl text-white text-center leading-tight drop-shadow-lg"
+                className="font-display text-2xl md:text-3xl text-white text-center leading-tight drop-shadow-lg"
                 animate={{ y: isHovered ? -16 : 0 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >

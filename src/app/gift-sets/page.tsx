@@ -58,11 +58,11 @@ export default function GiftSetsPage() {
           >
             <div className="flex items-center gap-3 mb-3">
               <Gift className="w-6 h-6 text-white" />
-              <p className="text-heading text-sm uppercase tracking-[0.2em] text-white/80">
+              <p className="font-heading text-sm uppercase tracking-[0.2em] text-white/80">
                 Curated Gift Collections
               </p>
             </div>
-            <h1 className="text-display text-4xl md:text-5xl lg:text-6xl text-white mb-3">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-3">
               Gift Sets
             </h1>
             <p className="text-white/80 text-lg md:text-xl max-w-lg">
@@ -119,7 +119,7 @@ export default function GiftSetsPage() {
             transition={{ duration: 0.6 }}
           >
             <Package className="w-10 h-10 text-accent mx-auto mb-4" />
-            <h2 className="text-display text-3xl md:text-4xl text-foreground mb-6">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Why Gift Artisan Spices?
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
@@ -130,7 +130,7 @@ export default function GiftSetsPage() {
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-white text-heading font-semibold px-10 py-6 rounded-sm"
+              className="bg-accent hover:bg-accent/90 text-white font-heading font-semibold px-10 py-6 rounded-sm"
             >
               <Link href="/subscribe">
                 Or Subscribe & Save Instead
@@ -168,7 +168,7 @@ function GiftSetCard({ set }: { set: (typeof giftSets)[number] }) {
           </div>
         )}
         <div className="absolute top-4 right-4">
-          <Badge className="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-none">
+          <Badge className="bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-none">
             Save ${savings}
           </Badge>
         </div>
@@ -176,7 +176,7 @@ function GiftSetCard({ set }: { set: (typeof giftSets)[number] }) {
 
       {/* Content */}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="text-heading text-xl text-foreground">{set.name}</h3>
+        <h3 className="font-heading text-xl text-foreground">{set.name}</h3>
         <p className="mt-2 text-muted-foreground text-sm leading-relaxed">
           {set.description}
         </p>
@@ -185,7 +185,7 @@ function GiftSetCard({ set }: { set: (typeof giftSets)[number] }) {
 
         {/* Included Blends */}
         <div className="mb-4">
-          <p className="text-xs text-heading uppercase tracking-wider text-muted-foreground mb-2">
+          <p className="text-xs font-heading uppercase tracking-wider text-muted-foreground mb-2">
             Includes
           </p>
           <ul className="space-y-1.5">
@@ -210,14 +210,14 @@ function GiftSetCard({ set }: { set: (typeof giftSets)[number] }) {
         {/* Price & CTA */}
         <div className="mt-auto pt-4">
           <div className="flex items-baseline gap-3 mb-4">
-            <span className="text-display text-2xl text-foreground">
+            <span className="font-display text-2xl text-foreground">
               ${set.price}
             </span>
             <span className="text-muted-foreground line-through text-sm">
               ${set.originalPrice}
             </span>
           </div>
-          <Button className="w-full bg-primary hover:bg-primary-light text-white text-heading font-semibold py-5 rounded-sm">
+          <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold py-5 rounded-sm">
             <Gift className="w-4 h-4 mr-2" />
             Add Gift Set to Cart
           </Button>

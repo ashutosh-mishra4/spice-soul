@@ -210,23 +210,23 @@
 /* ============================================
    CUSTOM UTILITIES
    ============================================ */
-@utility text-heading {
+@utility font-heading {
   font-family: var(--font-lora), var(--font-heading), serif;
   font-weight: 600;
 }
 
-@utility text-display {
+@utility font-display {
   font-family: var(--font-lora), var(--font-display), serif;
   font-weight: 600;
 }
 
-@utility text-logo {
+@utility font-logo {
   font-family: var(--font-lora), serif;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
 
-@utility text-body {
+@utility font-body {
   font-family: var(--font-source-sans), var(--font-body), sans-serif;
   font-weight: 400;
 }

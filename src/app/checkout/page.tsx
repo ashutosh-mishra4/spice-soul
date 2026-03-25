@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check, ChevronDown, Pencil } from "lucide-react";
@@ -30,10 +30,19 @@ export default function CheckoutPage() {
   const completedSteps = useCartStore((s) => s.checkout.completedSteps);
   const editStep = useCartStore((s) => s.editStep);
   const checkout = useCartStore((s) => s.checkout);
+  const orderCompletedRef = useRef(false);
 
-  // Redirect to cart if empty
+  // Mark order as completed when all steps are done and review is active
+  // This prevents the empty-cart redirect from racing with the confirmation navigation
   useEffect(() => {
-    if (items.length === 0) {
+    if (activeStep === "review" && completedSteps.length >= 4) {
+      orderCompletedRef.current = true;
+    }
+  }, [activeStep, completedSteps]);
+
+  // Redirect to cart if empty (but not if order was just placed)
+  useEffect(() => {
+    if (items.length === 0 && !orderCompletedRef.current) {
       router.replace("/cart");
     }
   }, [items.length, router]);
@@ -107,7 +116,7 @@ export default function CheckoutPage() {
                         <span
                           className={`text-sm ${
                             isCompleted
-                              ? "text-foreground text-heading font-semibold"
+                              ? "text-foreground font-heading font-semibold"
                               : "text-muted-foreground"
                           }`}
                         >

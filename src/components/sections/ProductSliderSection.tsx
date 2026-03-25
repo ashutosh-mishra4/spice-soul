@@ -142,7 +142,7 @@ export function ProductSliderSection() {
 				{/* Section Title */}
 				<motion.h2
 					variants={itemVariants}
-					className="text-display text-3xl md:text-4xl lg:text-5xl text-foreground text-center mb-12"
+					className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground text-center mb-12"
 				>
 					Discover the Blends
 				</motion.h2>

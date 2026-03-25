@@ -46,7 +46,7 @@ export function DeliveryStep() {
         <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
           <Truck className="w-4 h-4 text-primary" />
         </div>
-        <h3 className="text-heading text-lg text-foreground">
+        <h3 className="font-heading text-lg text-foreground">
           Delivery Method
         </h3>
       </div>
@@ -73,10 +73,10 @@ export function DeliveryStep() {
               />
               <div className="flex-1">
                 <div className="flex items-center justify-between">
-                  <span className="text-heading text-sm text-foreground">
+                  <span className="font-heading text-sm text-foreground">
                     {option.name}
                   </span>
-                  <span className="text-heading text-sm text-foreground">
+                  <span className="font-heading text-sm text-foreground">
                     {displayPrice === 0 ? (
                       <span className="text-primary font-semibold">Free</span>
                     ) : (
@@ -97,7 +97,7 @@ export function DeliveryStep() {
         type="button"
         onClick={handleContinue}
         disabled={isCalculating}
-        className="w-full bg-primary hover:bg-primary-light text-white text-heading font-semibold py-5 rounded-sm"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold py-5 rounded-sm"
       >
         {isCalculating ? (
           <>

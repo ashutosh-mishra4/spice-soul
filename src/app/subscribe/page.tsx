@@ -131,7 +131,7 @@ export default function SubscribePage() {
             <Badge className="bg-accent text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-none mb-4">
               Save up to 15%
             </Badge>
-            <h1 className="text-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
               Subscribe & Save
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed">
@@ -142,7 +142,7 @@ export default function SubscribePage() {
               <Button
                 asChild
                 size="lg"
-                className="bg-white text-foreground hover:bg-white/90 text-heading font-semibold px-8 py-6 rounded-sm"
+                className="bg-white text-foreground hover:bg-white/90 font-heading font-semibold px-8 py-6 rounded-sm"
               >
                 <a href="#plans">
                   View Plans
@@ -164,10 +164,10 @@ export default function SubscribePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="text-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="font-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
               Simple & Flexible
             </p>
-            <h2 className="text-display text-3xl md:text-4xl text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground">
               How It Works
             </h2>
           </motion.div>
@@ -188,8 +188,8 @@ export default function SubscribePage() {
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
-                <p className="text-heading text-sm text-accent mb-2">{step}</p>
-                <h3 className="text-heading text-xl text-foreground mb-3">
+                <p className="font-heading text-sm text-accent mb-2">{step}</p>
+                <h3 className="font-heading text-xl text-foreground mb-3">
                   {title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">
@@ -211,10 +211,10 @@ export default function SubscribePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="text-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="font-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
               Choose Your Frequency
             </p>
-            <h2 className="text-display text-3xl md:text-4xl text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground">
               Subscription Plans
             </h2>
           </motion.div>
@@ -256,10 +256,10 @@ export default function SubscribePage() {
                         </Badge>
                       )}
                     </div>
-                    <h3 className="text-heading text-xl text-foreground">
+                    <h3 className="font-heading text-xl text-foreground">
                       {plan.name}
                     </h3>
-                    <p className="text-display text-3xl text-primary mt-2">
+                    <p className="font-display text-3xl text-primary mt-2">
                       Save {plan.discount}%
                     </p>
                     <p className="mt-3 text-sm text-muted-foreground">
@@ -282,7 +282,7 @@ export default function SubscribePage() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary-light text-white text-heading font-semibold px-12 py-6 rounded-sm"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold px-12 py-6 rounded-sm"
             >
               <Link href="/shop">
                 Choose Your Blends
@@ -302,7 +302,7 @@ export default function SubscribePage() {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-display text-3xl md:text-4xl text-white mb-8">
+              <h2 className="font-display text-3xl md:text-4xl text-white mb-8">
                 Subscriber Benefits
               </h2>
               <ul className="space-y-4">
@@ -342,10 +342,10 @@ export default function SubscribePage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <p className="text-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="font-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
               Got Questions?
             </p>
-            <h2 className="text-display text-3xl md:text-4xl text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -353,7 +353,7 @@ export default function SubscribePage() {
           <Accordion type="single" collapsible className="w-full">
             {subscribeFAQs.map((faq, index) => (
               <AccordionItem key={index} value={`faq-${index}`}>
-                <AccordionTrigger className="text-heading text-left text-base">
+                <AccordionTrigger className="font-heading text-left text-base">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">

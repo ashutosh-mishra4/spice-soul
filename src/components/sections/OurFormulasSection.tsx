@@ -80,7 +80,7 @@ export function OurFormulasSection() {
 						{/* Section Title */}
 						<motion.h2
 							variants={itemVariants}
-							className="text-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-10"
+							className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-10"
 						>
 							Our Blends
 						</motion.h2>
@@ -114,7 +114,7 @@ export function OurFormulasSection() {
 								transition={{ duration: 0.3 }}
 								className=""
 							>
-								<h3 className="text-display text-2xl md:text-3xl text-foreground mb-4">
+								<h3 className="font-display text-2xl md:text-3xl text-foreground mb-4">
 									{activeTabData?.title}
 								</h3>
 

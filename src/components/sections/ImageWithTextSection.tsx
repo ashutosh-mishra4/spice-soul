@@ -55,7 +55,7 @@ export function ImageWithTextSection() {
 				{/* Tagline */}
 					<motion.h2
 						variants={itemVariants}
-						className="text-display text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] text-foreground leading-tight"
+						className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] text-foreground leading-tight"
 					>
 						<p className="font-bold">Cook Bold.</p>{" "}
 						<p className="font-bold">Taste Authentic.</p>{" "}
@@ -79,11 +79,11 @@ export function ImageWithTextSection() {
 							asChild
 							variant="default"
 							size="lg"
-							className="bg-primary hover:bg-primary-light text-white text-heading font-semibold px-8 py-6 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+							className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold px-8 py-6 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
 						>
 							<Link
 								href="/collections/shop-all"
-								className="text-white"
+								className="text-primary-foreground"
 							>
 								Shop now
 							</Link>

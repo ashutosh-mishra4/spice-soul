@@ -9,7 +9,7 @@ export function CheckoutHeader() {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Link
           href="/"
-          className="text-logo text-2xl lg:text-3xl text-primary"
+          className="font-logo text-2xl lg:text-3xl text-primary"
         >
           Spice & Soul
         </Link>

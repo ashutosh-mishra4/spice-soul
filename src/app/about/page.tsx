@@ -93,7 +93,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="max-w-xl"
           >
-            <h1 className="text-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight">
               Our Story
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/85 leading-relaxed">
@@ -116,10 +116,10 @@ export default function AboutPage() {
         >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div variants={itemVariants}>
-              <p className="text-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
+              <p className="font-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
                 Our Mission
               </p>
-              <h2 className="text-display text-3xl md:text-4xl lg:text-[44px] text-foreground leading-tight">
+              <h2 className="font-display text-3xl md:text-4xl lg:text-[44px] text-foreground leading-tight">
                 Hand-Crafted Excellence, From Our Kitchen to Yours
               </h2>
               <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
@@ -170,7 +170,7 @@ export default function AboutPage() {
                 variants={itemVariants}
                 className="text-center"
               >
-                <p className="text-display text-4xl md:text-5xl text-white">
+                <p className="font-display text-4xl md:text-5xl text-white">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-white/70 text-sm uppercase tracking-wider">
@@ -192,10 +192,10 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <p className="text-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
+            <p className="font-heading text-sm uppercase tracking-[0.2em] text-accent mb-4">
               What We Stand For
             </p>
-            <h2 className="text-display text-3xl md:text-4xl text-foreground">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground">
               Our Values
             </h2>
           </motion.div>
@@ -216,7 +216,7 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-heading text-xl text-foreground mb-3">
+                <h3 className="font-heading text-xl text-foreground mb-3">
                   {title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -237,7 +237,7 @@ export default function AboutPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-display text-3xl md:text-4xl text-foreground mb-6">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Ready to Transform Your Cooking?
             </h2>
             <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-10">
@@ -247,7 +247,7 @@ export default function AboutPage() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary-light text-white text-heading font-semibold px-10 py-6 rounded-sm"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading font-semibold px-10 py-6 rounded-sm"
             >
               <Link href="/shop">Shop the Collection</Link>
             </Button>
