@@ -48,8 +48,14 @@ interface HeaderProps {
 export function Header({ variant = "overlay" }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const cartCount = useCartStore((s) => s.totalItems());
   const pathname = usePathname();
+
+  // Defer persisted store values until after hydration
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   // Detect scroll to add background
   useEffect(() => {
@@ -225,7 +231,7 @@ export function Header({ variant = "overlay" }: HeaderProps) {
               >
                 <Link href="/cart">
                   <ShoppingBag className="h-5 w-5" />
-                  {cartCount > 0 && (
+                  {hasMounted && cartCount > 0 && (
                     <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
                       {cartCount}
                     </span>
